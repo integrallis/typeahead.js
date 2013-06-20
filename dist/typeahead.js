@@ -637,7 +637,9 @@ var InputView = function() {
             return this.$input.val();
         },
         setInputValue: function(value, silent) {
-            this.$input.val(value);
+            if (value !== "" && value !== undefined) {
+                this.$input.val(value);
+            }
             !silent && this._compareQueryToInputValue();
         },
         getHintValue: function() {
